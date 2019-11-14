@@ -1,0 +1,19 @@
+REM It is possible to extend menu-system in the config.sys with SUBMENU, which 
+REM enables sub-menus. One can also use MENUDEFAULT to specify the default 
+REM menu item and how long it should wait before it picks the default.
+
+[MENU]
+MENUITEM=DOS, DOS with CD-ROM 
+MENUITEM=WIN, Windows
+
+REM By using SUBMENU you will creating an extra menu(TEST) 
+SUBMENU=TEST, Testing
+
+REM Using MENUDEAFAULT makes it possible to choose a certain 
+REM item(WIN) and if it's set also select that item after a certain 
+REM time(20 secs)
+MENUDEFAULT=WIN, 20
+
+REM Here is the SUBMENU it can also include other SUBMENUs 
+[TEST]
+MENUITEM=TEST1, Testing 1

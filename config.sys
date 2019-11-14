@@ -1,0 +1,16 @@
+REM This is a simple Config.sys, which tries to outline the basics of multiple
+REM configurations with the use of MENU and MENUITEM:
+
+[MENU]
+REM Define an item in the menu, first identifier and then what REM is written in the menu
+MENUITEM=DOS, DOS with CD-ROM
+MENUITEM=WIN, Windows
+REM The commands at COMMON is executed no matter what is chosen REM in the MENU
+
+[COMMON]
+DOS=HIGH,UMB
+REM For each menu item there can be defined a configuration [DOS]
+DEVICE=C:\DOS\HIMEM.SYS /TESTMEM:OFF DEVICE=C:\DOS\EMM386.EXE NOEMS DEVICE=C:\CDROM\DRIVER.SYS /D:CD1
+
+[WIN]
+DEVICE=C:\DOS\HIMEM.SYS /TESTMEM:OFF
