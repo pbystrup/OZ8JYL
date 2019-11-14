@@ -1,0 +1,58 @@
+
+;  SAMPLE CONFIG.SYS FILE
+;
+;  See comments at:  /homestead/thestarman3/BootMenu.htm
+;
+;==========================================================================
+;   MENUCOLOR=x[,y]     x=Color of text, and y=Color of background.
+;                         (The y value is optional.)
+;   Color Values 
+;   -------------
+;    0  Black             8  Gray 
+;    1  Blue              9  Bright blue 
+;    2  Green            10  Bright green 
+;    3  Cyan             11  Bright cyan 
+;    4  Red              12  Bright red 
+;    5  Magenta          13  Bright magenta 
+;    6  Brown            14  Yellow 
+;    7  White            15  Bright white 
+;  
+;==========================================================================
+
+[MENU]
+
+; The following sets Yellow Text on a Blue background:
+MENUCOLOR=14,1
+
+; This means that Menuitem 1 will be executed after 5 seconds...
+; [MENUDEFAULT=MENUITEM, Seconds before executing IF you don't press a key]:
+MENUDEFAULT=1,5
+
+; Here are the Option items in order [MENUITEM=Label, Item_Title]:
+MENUITEM=WIN, Windows 95 (COM3=MODEM, IRQ=5).
+MENUITEM=RAMDRV, Windows 95 with 4MB RAMdrive.
+MENUITEM=DOSDRVS, DOS with MOUSE and CD-ROM DOS-drivers.
+MENUITEM=DOSONLY, DOS ONLY (no drivers; for MAX Conventional-memory).
+
+[COMMON]
+DEVICE=C:\WINDOWS\HIMEM.SYS /TESTMEM:OFF /V
+DOS=HIGH,UMB
+
+[WIN]
+
+[RAMDRV]
+DEVICEHIGH=C:\WINDOWS\RAMDRIVE.SYS 4096 512 128 /E
+
+[DOSDRVS]
+; This is the DOS software driver for my CD-ROM drive:
+DEVICEHIGH=C:\WINDOWS\COMMAND\ATAPI_CD.SYS /D:MSCD001 /P:1E8
+DEVICEHIGH=C:\WINDOWS\COMMAND\ANSI.SYS /X
+
+[DOSONLY]
+
+
+[COMMON]
+; Drivers placed under the [COMMON] headers (they can be both before and
+; after the Menuitem Label headers) apply to all Menuitems!
+
+
