@@ -4,9 +4,9 @@ REM configurations with the use of MENU and MENUITEM:
 [MENU]
 REM Define an item in the menu, first identifier and then what REM is written in the menu
 MENUITEM=DOS, DOS with CD-ROM
-MENUITEM=WIN, Ræv Program
-MENUITEM=WIN, PromBr
-MENUITEM=WIN, Norton Commander 5.51
+MENUITEM=FOX, Ræv Program
+MENUITEM=PROM, PromBr
+MENUITEM=NC, Norton Commander 5.51
 MENUITEM=WIN, Windows 7
 REM The commands at COMMON is executed no matter what is chosen REM in the MENU
 
